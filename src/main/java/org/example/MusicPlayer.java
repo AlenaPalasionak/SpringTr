@@ -1,8 +1,6 @@
 package org.example;
 
-/**
- * @author Neil Alishev
- */
+
 public class MusicPlayer {
     private Music music;
 
