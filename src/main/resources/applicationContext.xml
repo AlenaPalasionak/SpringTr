@@ -7,19 +7,33 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 <context:property-placeholder location="classpath:musicPlayer.properties"/>
-    <bean id="musicBean"
+
+    <!-- создаем три объекта разных видов музыки-->
+    <bean id="musicBean1"
           class="org.example.RockMusic">
     </bean>
 
+    <bean id="musicBean2"
+          class="org.example.ClassicalMusic">
+    </bean>
+
+    <bean id="musicBean3"
+          class="org.example.PopMusic">
+    </bean>
+
+    <!-- создаем class MusicPlayer-->
     <bean id="musicPlayer"
           class="org.example.MusicPlayer">
-        <property name="music" ref="musicBean"/>    <!--внедр.завис. с помощью сеттера.
-                                                    имя сеттера "music" без слова set и камэлКейса -->
-        <!--<property name="name" value="Some name"/>
-        <property name="volume" value="50"/>можно так внедрять значения переменных, второй вариант ниже-->
+        <property name="musicList">  <!-- с полем  List<Music> musicList-->
+            <list>
+                <ref bean="musicBean1"/> <!-- добавляем эл. в ячейки листа musicList-->
+                <ref bean="musicBean2"/>
+                <ref bean="musicBean3"/>
+            </list>
+        </property>
+
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
 
     </bean>
-
 </beans>
