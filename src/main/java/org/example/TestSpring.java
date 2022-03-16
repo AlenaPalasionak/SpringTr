@@ -9,8 +9,11 @@ public class TestSpring {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml");
-        //init-method будет вызван здесь, до создания объекта
+        //init-method будет вызван здесь, до создания объекта. Если у нас бин -синглтон - инит метод будет вызван один раз,
+        // если бин-прототайп - то для каждого объекта выз. инит метод, но не будет ни одного димтрой метода у прототипа.
         ClassicalMusic classicalMusic = context.getBean("musicBean", ClassicalMusic.class);
+//        ClassicalMusic classicalMusic2 = context.getBean("musicBean", ClassicalMusic.class);
+//        ClassicalMusic classicalMusic3 = context.getBean("musicBean", ClassicalMusic.class);
         System.out.println(classicalMusic.getSong());
 //
 //        MusicPlayer firstPlayer = context.getBean("musicPlayer", MusicPlayer.class);
