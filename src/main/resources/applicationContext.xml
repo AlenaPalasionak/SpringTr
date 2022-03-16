@@ -7,20 +7,25 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
     <bean id="musicBean"
-          class="org.example.RockMusic">
-    </bean>
-
-    <bean id="musicPlayer"
-          class="org.example.MusicPlayer"
-    scope = "prototype"> <!--чтобы каждый раз создавался новый объект-->
-        <property name="music" ref="musicBean"/>    <!--внедр.завис. с помощью сеттера.
-                                                    имя сеттера "music" без слова set и камэлКейса -->
-        <!--<property name="name" value="Some name"/>
-        <property name="volume" value="50"/>можно так внедрять значения переменных, второй вариант ниже-->
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
+          class="org.example.ClassicalMusic"
+    init-method = "doMyInit"
+    destroy-method="doMyDestroy"
+          scope = "prototype">
 
     </bean>
+
+<!--    <bean id="musicPlayer"-->
+<!--          class="org.example.MusicPlayer"-->
+<!--    scope = "prototype"> &lt;!&ndash;чтобы каждый раз создавался новый объект&ndash;&gt;-->
+<!--        <property name="music" ref="musicBean"/>    &lt;!&ndash;внедр.завис. с помощью сеттера.-->
+<!--                                                    имя сеттера "music" без слова set и камэлКейса &ndash;&gt;-->
+<!--        &lt;!&ndash;<property name="name" value="Some name"/>-->
+<!--        <property name="volume" value="50"/>можно так внедрять значения переменных, второй вариант ниже&ndash;&gt;-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+
+<!--    </bean>-->
 
 </beans>
