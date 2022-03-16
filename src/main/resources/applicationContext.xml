@@ -12,7 +12,8 @@
     </bean>
 
     <bean id="musicPlayer"
-          class="org.example.MusicPlayer">
+          class="org.example.MusicPlayer"
+    scope = "prototype"> <!--чтобы каждый раз создавался новый объект-->
         <property name="music" ref="musicBean"/>    <!--внедр.завис. с помощью сеттера.
                                                     имя сеттера "music" без слова set и камэлКейса -->
         <!--<property name="name" value="Some name"/>
