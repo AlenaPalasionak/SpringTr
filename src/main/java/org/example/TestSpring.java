@@ -10,10 +10,7 @@ public class TestSpring {
 MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 musicPlayer.playMusic();
 
-        /* Algorithm
-        1.сканируются все классы с аннотацией @Component - созд. бины
-        2. спринг проверяет подходят ли бины в качестве зависимости там, где мы указали @Autowired
-         */
+
 
 //        Music music = context.getBean("rockMusic", Music.class);
 //        MusicPlayer musicPlayer = new MusicPlayer(music);
