@@ -12,12 +12,7 @@ public class TestSpring {
         System.out.println(musicPlayer.getName());
         System.out.println(musicPlayer.getVolume());
 
-        ClassicalMusic musicPlayer1 = context.getBean("classicalMusic", ClassicalMusic.class);
-        ClassicalMusic musicPlayer2 = context.getBean("classicalMusic", ClassicalMusic.class);
-        System.out.println(musicPlayer1==musicPlayer2);
+        ClassicalMusic music1 = context.getBean("classicalMusic", ClassicalMusic.class);
     }
 }
-/*Algorithm
-1. create a property for musicPlayer
-2. add the notation to the fields: @Value("${musicPlayer.name}")
- */
+//
