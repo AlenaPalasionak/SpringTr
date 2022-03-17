@@ -7,19 +7,17 @@ public class TestSpring {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml");
 
-MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-musicPlayer.playMusic();
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
+        System.out.println(musicPlayer.getName());
+        System.out.println(musicPlayer.getVolume());
 
-
-//        Music music = context.getBean("rockMusic", Music.class);
-//        MusicPlayer musicPlayer = new MusicPlayer(music);
-//        musicPlayer.playMusic();
-//
-//        Music music2 = context.getBean("classicalMusic", Music.class);
-//        MusicPlayer musicPlayer2 = new MusicPlayer(music2);
-//        musicPlayer2.playMusic();
-//
-//        context.close();
+        ClassicalMusic musicPlayer1 = context.getBean("classicalMusic", ClassicalMusic.class);
+        ClassicalMusic musicPlayer2 = context.getBean("classicalMusic", ClassicalMusic.class);
+        System.out.println(musicPlayer1==musicPlayer2);
     }
 }
+/*Algorithm
+1. create a property for musicPlayer
+2. add the notation to the fields: @Value("${musicPlayer.name}")
+ */
