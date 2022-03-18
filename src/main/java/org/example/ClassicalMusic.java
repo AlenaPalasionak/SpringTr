@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component //если мы помечаем класс этой аннотацией, то спринг создаст нам бины этих классов, а значит и объекты
+
 public class ClassicalMusic implements Music {
 
     @PostConstruct
