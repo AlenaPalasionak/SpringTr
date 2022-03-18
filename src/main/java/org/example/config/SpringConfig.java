@@ -35,8 +35,11 @@ public class SpringConfig {
 
     @Bean
     public List<Music> musicList() {
-        // Этот лист неизменяемый (immutable)
+        // Этот лист неизменяемый (immutable).
         return Arrays.asList(classicalMusic(), rockMusic(), jazzMusic());
+        /*This method also provides a convenient way to create a
+        fixed-size list initialized to contain several elements:
+        List<String> stooges = Arrays.asList("Larry", "Moe", "Curly");*/
     }
 
     @Bean
