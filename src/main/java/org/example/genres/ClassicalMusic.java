@@ -1,5 +1,6 @@
-package org.example;
+package org.example.genres;
 
+import org.example.Music;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
