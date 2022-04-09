@@ -1,1 +1,2 @@
-# SpringCoreTraining
+## SpringCoreTraining
+### Уроки разбиты на ветки.
